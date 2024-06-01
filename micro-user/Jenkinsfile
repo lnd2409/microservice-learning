@@ -18,7 +18,33 @@ pipeline {
         }
         stage('Deploy to VPS') {
             steps {
-                echo 'Deploying and cleaning'
+                script {
+                    // Copy JAR file to server
+                    sshPublisher(
+                        continueOnError: false,
+                        failOnError: true,
+                        publishers: [
+                            sshPublisherDesc(
+//                                 configName: "your-ssh-configuration", // Tên cấu hình SSH trong Jenkins
+                                transfers: [
+                                    sshTransfer(
+                                        sourceFiles: './micro-user/target/user-api.jar', // Đường dẫn tới tệp JAR đã đóng gói
+                                        removePrefix: './micro-user/target/', // Prefix cần loại bỏ khi sao chép
+                                        remoteDirectory: '/dev/web' // Thư mục trên máy chủ để sao chép tệp JAR
+                                    )
+                                ]
+                            )
+                        ]
+                    )
+
+                    // Start Spring Boot application
+                    sshCommand remote: [
+                        host: '192.168.1.25',
+                        user: 'root',
+                        password: 'root',
+                        allowAnyHosts: true
+                    ], command: 'java -jar /dev/web/user-api.jar &'
+                }
             }
         }
     }
