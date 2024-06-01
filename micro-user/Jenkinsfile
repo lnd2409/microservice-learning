@@ -4,10 +4,6 @@ pipeline {
     tools {
         maven 'maven-home'
     }
-
-    environment {
-
-    }
     stages {
         stage('Build maven') {
             steps {
