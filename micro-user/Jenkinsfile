@@ -7,9 +7,11 @@ pipeline {
     stages {
         stage('Build maven') {
             steps {
+                dir('./micro-common') {
+                    sh 'mvn clean install'
+                }
+
                 dir('./micro-user') {
-                    sh 'mvn --version'
-                    sh 'java -version'
                     sh 'mvn clean install'
                 }
             }
