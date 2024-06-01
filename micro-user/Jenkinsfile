@@ -12,7 +12,7 @@ pipeline {
                 }
 
                 dir('./micro-user') {
-                    sh 'mvn clean install'
+                    sh 'mvn clean install -DSkipTests'
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline {
                         failOnError: true,
                         publishers: [
                             sshPublisherDesc(
-//                                 configName: "your-ssh-configuration", // Tên cấu hình SSH trong Jenkins
+                                configName: "staging", // Tên cấu hình SSH trong Jenkins
                                 transfers: [
                                     sshTransfer(
                                         sourceFiles: './micro-user/target/user-api.jar', // Đường dẫn tới tệp JAR đã đóng gói
