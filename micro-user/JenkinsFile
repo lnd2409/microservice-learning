@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'maven-home'
+    }
+
+    environment {
+
+    }
+    stages {
+        stage('Build maven') {
+            steps {
+                sh 'mvn --version'
+                sh 'java -version'
+                sh 'mvn clean package -Dmaven.test.failure.ignore=true'
+            }
+        }
+    }
+}
