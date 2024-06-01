@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Sao chép tệp JAR từ máy chủ Jenkins đến máy chủ VPS
-                    sh 'scp ./micro-user/target/user-api.jar root@192.168.1.25:/dev/web/'
+                    sh 'scp -o StrictHostKeyChecking=no ./micro-user/target/user-api.jar root@192.168.1.25:/dev/web/'
 
                     // Khởi động ứng dụng trên máy chủ VPS
                     sh 'sshpass -p "root" ssh root@192.168.1.25 "java -jar /dev/web/user-api.jar &"'
