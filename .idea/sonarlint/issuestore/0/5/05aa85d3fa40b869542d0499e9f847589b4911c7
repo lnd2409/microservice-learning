@@ -1,0 +1,12 @@
+
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8éçÅåş1J$bd817a15-4436-4a06-a825-65b8b8cdfd71
+`
+java:S1854">Remove this useless assignment to local variable "authHeader".(½÷¤ıÿÿÿÿ8”Èçş1
+Q
+java:S1481"/Remove this unused "authHeader" local variable.(½÷¤ıÿÿÿÿ8—Èçş1
+X	java:S125"<This block of commented-out lines of code should be removed.(‰õÔˆ8™Èçş1
+~
+java:S1128"6Remove this unused import 'lombok.AllArgsConstructor'.(´œ¾öùÿÿÿÿ8‰›æş1J$1ac1c892-989e-4159-a4f4-2b8576bc3c49
+b
+java:S1128"@Remove this unused import 'org.springframework.http.HttpStatus'.(íŸ¤Šúÿÿÿÿ8šÈçş1

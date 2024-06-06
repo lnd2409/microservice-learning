@@ -1,8 +1,13 @@
 server:
-  port: 8080
+  port: 8082
 logging:
   level:
     root: INFO
 spring:
   application:
-    name: user-api
+    name: micro-user
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://rain.db.elephantsql.com:5432/ohwweerk
+    username: ohwweerk
+    password: QINiYidMmQQesbfQjNOhxRZgw7ZhVlYp

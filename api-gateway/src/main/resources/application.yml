@@ -1,0 +1,23 @@
+server:
+  port: 8080
+logging:
+  level:
+    root: INFO
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin
+      routes:
+        - id: micro-user
+          uri: http://localhost:8082
+          predicates:
+            - Path=/users/**
+        - id: micro-task
+          uri: http://localhost:8083
+          predicates:
+            - Path=/task/**
+  main:
+    web-application-type: reactive
+  application:
+    name: api-gateway

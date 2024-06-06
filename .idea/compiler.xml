@@ -8,17 +8,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="micro-user" />
+        <module name="api-gateway" />
         <module name="micro-task" />
-        <module name="micro-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="micro-common" target="17" />
       <module name="micro-user (1)" target="17" />
       <module name="micro-user (2)" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-gateway" options="-parameters" />
       <module name="micro-common" options="-parameters" />
       <module name="micro-task" options="-parameters" />
       <module name="micro-user" options="-parameters" />
