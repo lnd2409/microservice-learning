@@ -1,4 +1,7 @@
 
-—	java:S116"URename this field "SECRET_KEY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú­ş¹8®Ñåş1J$cb62f9b0-b5ad-40a1-b585-92cd6d0e4a48
 d
-java:S1170"!Make this final field static too.(Ú­ş¹8¯Ñåş1J$50d3f8cc-51f7-44ce-8b84-f86d66bd6d57
+java:S1116"Remove this empty statement.(¼„”Éÿÿÿÿÿ8ºüŠÿ1J$6d0968c6-fde6-4215-a301-498c08e903a0
+q
+java:S1874$".Remove this use of "parser"; it is deprecated.(¹Ñº¹8¦şŠÿ1J$ad3a897a-adaa-4879-9621-3ba3155ebe3a
+x
+java:S1874%"5Remove this use of "setSigningKey"; it is deprecated.(ÑƒÅÙ8¦şŠÿ1J$f429f9ac-9671-4ee5-9d42-7ccfc115fbb4

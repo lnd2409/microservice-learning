@@ -1,5 +1,13 @@
 server:
-  port: 8081
+  port: 8083
 logging:
   level:
     root: INFO
+spring:
+  application:
+    name: micro-task
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://rain.db.elephantsql.com:5432/ohwweerk
+    username: ohwweerk
+    password: QINiYidMmQQesbfQjNOhxRZgw7ZhVlYp

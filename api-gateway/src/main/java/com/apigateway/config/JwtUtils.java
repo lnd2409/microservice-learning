@@ -2,8 +2,11 @@ package com.apigateway.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
 import org.springframework.stereotype.Component;
 
+import java.security.Key;
 import java.util.Date;
 
 /**
@@ -15,7 +18,7 @@ import java.util.Date;
  */
 @Component
 public class JwtUtils {
-    private final String SECRET_KEY = "";
+    private static final Key SECRET_KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);;
 
     public String extractUsername(String token) {
         return getClaims(token).getSubject();

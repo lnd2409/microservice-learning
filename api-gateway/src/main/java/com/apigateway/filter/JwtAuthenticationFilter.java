@@ -27,24 +27,25 @@ public class JwtAuthenticationFilter implements WebFilter {
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
         String authHeader = exchange.getRequest().getHeaders().getFirst("Authorization");
 
-        // if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-        //     exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-        //     return exchange.getResponse().setComplete();
-        // }
-        //
-        // String token = authHeader.substring(7);
-        //
-        // if (jwtUtils.isTokenExpired(token)) {
-        //     exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-        //     return exchange.getResponse().setComplete();
-        // }
-        //
-        // String username = jwtUtils.extractUsername(token);
-        //
-        // if (username == null) {
-        //     exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-        //     return exchange.getResponse().setComplete();
-        // }
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            String token = authHeader.substring(7);
+
+
+            if (jwtUtils == null) {
+                jwtUtils = new JwtUtils();
+            }
+            if (jwtUtils.isTokenExpired(token)) {
+                exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
+                return exchange.getResponse().setComplete();
+            }
+
+            String username = jwtUtils.extractUsername(token);
+
+            if (username == null) {
+                exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
+                return exchange.getResponse().setComplete();
+            }
+        }
 
         return chain.filter(exchange);
     }

@@ -1,7 +1,5 @@
 package com.apigateway.config;
 
-import java.net.ConnectException;
-
 /**
  * AbstractChannelCustom
  *

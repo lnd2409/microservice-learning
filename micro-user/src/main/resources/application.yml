@@ -11,3 +11,6 @@ spring:
     url: jdbc:postgresql://rain.db.elephantsql.com:5432/ohwweerk
     username: ohwweerk
     password: QINiYidMmQQesbfQjNOhxRZgw7ZhVlYp
+  main:
+    web-application-type: reactive
+
