@@ -1,5 +1,7 @@
 package com.microtask.service;
 
+import com.microtask.dto.TaskCreateDto;
+
 /**
  * IUserService
  *
@@ -8,4 +10,5 @@ package com.microtask.service;
  * @since 6/7/2024
  */
 public interface ITaskService {
+    void createTask(TaskCreateDto taskCreateDto);
 }

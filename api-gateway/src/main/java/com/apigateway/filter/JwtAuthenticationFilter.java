@@ -1,7 +1,6 @@
 package com.apigateway.filter;
 
 import com.apigateway.config.JwtUtils;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
